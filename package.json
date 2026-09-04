@@ -1,0 +1,23 @@
+{
+  "name": "smart-desk",
+  "version": "1.0.0",
+  "main": "main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "devDependencies": {
+    "electron": "^44.1.1"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^4.0.57",
+    "ai": "^7.0.91",
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^17.4.2",
+    "zod": "^4.5.4"
+  }
+}

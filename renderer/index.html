@@ -1,0 +1,85 @@
+<!-- renderer/index.html -->
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline';"
+    />
+    <title>SmartDesk AI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- 标题栏 -->
+      <header class="title-bar">
+        <h1>🤖 SmartDesk AI</h1>
+        <div class="title-actions">
+          <button id="btn-clear" title="清除对话">🗑️</button>
+          <button id="btn-settings" title="设置">⚙️</button>
+        </div>
+      </header>
+
+      <!-- 聊天区域 -->
+      <main id="chat-container">
+        <div id="messages">
+          <div class="message assistant">
+            <div class="message-content">
+              你好！我是 SmartDesk，你的桌面 AI
+              助手。我可以帮你读写文件、执行命令、搜索代码。有什么可以帮你的？
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- 输入区域 -->
+      <footer class="input-area">
+        <textarea
+          id="user-input"
+          placeholder="输入消息... (Enter 发送，Shift+Enter 换行)"
+          rows="1"
+        ></textarea>
+        <button id="btn-send">发送</button>
+      </footer>
+
+      <!-- 设置面板 -->
+      <div id="settings-panel" class="hidden">
+        <div class="settings-overlay" id="settings-overlay"></div>
+        <div class="settings-content">
+          <h2>设置</h2>
+          <label>
+            API Key
+            <input type="password" id="setting-api-key" placeholder="sk-..." />
+          </label>
+          <label>
+            API 地址（可选）
+            <input
+              type="text"
+              id="setting-base-url"
+              placeholder="https://api.openai.com/v1"
+            />
+          </label>
+          <label>
+            模型
+            <select id="setting-model">
+              <option value="gpt-4o">GPT-4o</option>
+              <option value="gpt-4o-mini">GPT-4o mini</option>
+              <option value="gpt-5">GPT-5</option>
+              <option value="claude-sonnet-4-20250514">Claude Sonnet 4</option>
+              <option value="deepseek-chat">DeepSeek Chat</option>
+              <option value="qwen2.5">Qwen 2.5 (Ollama)</option>
+            </select>
+          </label>
+          <div class="settings-actions">
+            <button id="btn-save-settings" type="button">保存</button>
+            <button id="btn-cancel-settings" type="button">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
